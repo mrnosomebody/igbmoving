@@ -35,3 +35,4 @@ def send_email(data, service):
     recipient_list = RECIPIENTS
     html_message = render_to_string('email_message.html', {'data': data})
     send_mail(subject, message, from_email, recipient_list, html_message=html_message, fail_silently=False)
+

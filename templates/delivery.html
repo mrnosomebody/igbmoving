@@ -75,9 +75,11 @@
         </div>
         <div class="right">
             <div class="description__area">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eius harum laudantium molestiae
-                nisi perspiciatis sint voluptates. Culpa excepturi id incidunt ostrum placeat qui ullam vel
-                vitae. Dolorem, ullam.
+                IGB Moving & Delivery is a company that understands what it takes to plan a smooth and stress-free move
+                in BC. Every move is different, but we do our best to make sure that your move is taken care of
+                expeditiously and gently. We always start by listening to understand all the details of your unique
+                move. We render the services with regard to our terms and conditions. Please read our <a
+                    href="{% url 'terms_and_conditions' %}"><u>terms and conditions</u></a> carefully
             </div>
             <!--=============== CONTACT ===============-->
             <svg display="none">
@@ -137,10 +139,10 @@
                                 <div class="input-field">
                                     <label for="{{ form.phone.name }}">Mobile Number</label>
                                     <input id="{{ form.phone.name }}" name="{{ form.phone.name }}" type="tel"
-                                           placeholder="Enter mobile number" required>
+                                           placeholder="(999) 999-9999" required>
                                     {% if form.phone.errors %}
                                         <div style="color: red">
-                                            Enter a valid phone number (e.g. 1-(999)-999-9999)
+                                            Enter a valid phone number (e.g. (999)-999-9999)
                                         </div>
                                     {% endif %}
                                 </div>
@@ -181,7 +183,7 @@
                                            placeholder="Enter your zip code" required style="height: 52px;">
                                 </div>
 
-                            <div class="input-field">
+                                <div class="input-field">
                                     <label for="">{{ form.elevator_pickup.label }}</label>
                                     <div id="checklist" style="height: 52px;width: 100%;">
                                         <input id="id_elevator_pickup_0" type="radio" name="elevator_pickup"
@@ -256,7 +258,13 @@
                                      data-sitekey="{{ captcha_key }}">
                                 </div>
 
-                                <button id="submitApplication" type="submit" style="margin: 2% auto;">Submit</button>
+                                <div style="display: grid; width: 100%;">
+                                    <button id="submitApplication" type="submit" style="margin: 2% auto;">Submit
+                                    </button>
+                                    <div style="width: 100%; padding: 0 20%;">By submitting this form you accept the <a
+                                            href="{% url 'terms_and_conditions' %}"><u>terms and conditions</u></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

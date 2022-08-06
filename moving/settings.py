@@ -90,6 +90,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = email_config.EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = email_config.EMAIL_HOST_PASSWORD
 EMAIL_USE_TLS = True
+EMAIL_PORT = 587
 RECIPIENTS = email_config.RECIPIENTS
 
 # try:

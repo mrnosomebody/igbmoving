@@ -18,7 +18,10 @@
 
 <header class="header" id="header">
     <nav class="nav container">
-        <a href="#" class="nav__logo">IGB Moving&Delivery</a>
+        <div class="logo_name">
+            <img src="{% static 'images/igb.svg' %}" alt="" class="logo">
+            {#            <a href="#" class="nav__logo">IGB Moving&Delivery</a>#}
+        </div>
         <div class="nav__menu" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
@@ -58,12 +61,11 @@
     <section id="home">
         <div class="home__layout">
             <div class="title__text" style="margin-bottom: 3%;padding: 0 10%;">
-                Fast and reliable delivery all over Vancouver
+                IGB - Big moving made simple
             </div>
             <div class="title__text smaller" style="margin-bottom: 3%;">
-                Apartment move,
-                Store pick-up and delivery,
-                Haul away
+                IGB MOVING & DELIVERY meets high standards of business and offers professional, reliable and affordable
+                services. We do residential, commercial and office moves.
             </div>
             <div class="flex__box__static centered">
                 <a class="to__form__link" href="{% url 'moving' %}">
@@ -77,7 +79,6 @@
         <div class="image__blob">
             <img src="{% static 'images/df.jpg' %}" id="img1">
         </div>
-{#        <img src="{% static 'images/logo.svg' %}" style="width: 135px;height: 150px" alt="">#}
     </section>
 
     <!--=============== SERVICES ===============-->
@@ -100,7 +101,7 @@
                         <text width="200" font-size="30" fill="currentColor">
                             <textPath startOffset="50%" text-anchor="middle" alignment-baseline="middle"
                                       xlink:href="#top">
-                                Starting at
+                                the rate starts at
                             </textPath>
                         </text>
                         <text width="200" font-size="30" fill="currentColor">
@@ -110,13 +111,13 @@
                             </textPath>
                         </text>
                     </svg>
-                    <span style="font-size: 20px">$130</span>
+                    <span style="font-size: 20px">$120</span>
                 </a>
                 <div class="feature__text">
                     <div>
                         <span class="centered">Moving</span>
                         <p>
-                            Move your studio, apartment, house
+                            Move your home. Relocate your office.
                         </p>
                     </div>
                     <a href="{% url 'moving' %}" class="learn__more"><u>Learn more</u></a>
@@ -139,68 +140,31 @@
                         <text width="200" font-size="30" fill="currentColor">
                             <textPath startOffset="50%" text-anchor="middle" alignment-baseline="middle"
                                       xlink:href="#top">
-                                Starting at
+                                the rate starts at
                             </textPath>
                         </text>
                         <text width="200" font-size="30" fill="currentColor">
-                            {#                            <textPath startOffset="50%" text-anchor="middle" alignment-baseline="middle"#}
-                            {#                                      xlink:href="#bottom">#}
-                            {#                                per hour#}
-                            {#                            </textPath>#}
+                            <textPath startOffset="50%" text-anchor="middle" alignment-baseline="middle"
+                                      xlink:href="#bottom">
+                                per hour
+                            </textPath>
                         </text>
                     </svg>
-                    <span style="font-size: 20px">$80</span>
+                    <span style="font-size: 20px">$70</span>
                 </a>
                 <div class="feature__text">
                     <span class="centered">Delivery</span>
                     <p>
-                        Get your purchase wherever you need
+                        Get your items delivered
                     </p>
                     <a href="{% url 'delivery' %}" class="learn__more"><u>Learn more</u></a>
                 </div>
-
             </div>
-
-            {#            <div class="feature">#}
-            {#                <div class="feature__img">#}
-            {#                    <img src="{% static 'images/k3.svg' %}" alt="">#}
-            {#                </div>#}
-            {#                <a class="badge">#}
-            {#                    <svg viewBox="0 0 210 210">#}
-            {#                        <g stroke="none" fill="none">#}
-            {#                            <path d="M22,104.5 C22,58.9365081 58.9365081,22 104.5,22 C150.063492,22 187,58.9365081 187,104.5"#}
-            {#                                  id="top"></path>#}
-            {#                            <path d="M22,104.5 C22,150.063492 58.9365081,187 104.5,187 C150.063492,187 187,150.063492 187,104.5"#}
-            {#                                  id="bottom"></path>#}
-            {#                        </g>#}
-            {#                        <circle cx="105" cy="105" r="62" stroke="currentColor" stroke-width="1" fill="none"></circle>#}
-            {#                        <text width="200" font-size="30" fill="currentColor">#}
-            {#                            <textPath startOffset="50%" text-anchor="middle" alignment-baseline="middle"#}
-            {#                                      xlink:href="#top">#}
-            {#                                Starting at#}
-            {#                            </textPath>#}
-            {#                        </text>#}
-            {#                        <text width="200" font-size="30" fill="currentColor">#}
-            {#                            <textPath startOffset="50%" text-anchor="middle" alignment-baseline="middle"#}
-            {#                                      xlink:href="#bottom">#}
-            {#                                per hour#}
-            {#                            </textPath>#}
-            {#                        </text>#}
-            {#                    </svg>#}
-            {#                    <span style="font-size: 20px">$130</span>#}
-            {#                </a>#}
-            {#                <div class="feature__text">#}
-            {#                    <span class="centered">Haul away</span>#}
-            {#                    <p>#}
-            {#                        Easily get rid of old stuff or construction debris#}
-            {#                    </p>#}
-            {#                </div>#}
         </div>
 
         <div class="flex__box mt">
             <div class="left">
-                <span>We work all around Vancouver mainland area and Vancouver Island</span>
-                <span style="font-size: 25px;margin-top: 5%;">Check green zone on the map</span>
+                <span>The rendering service of IGB MOVING & DELIVERY covers  Metro Vancouver, Fraser Valley, Squamish-Lillooet, Sunshine Coast and Vancouver Island. We are ready to make the move regardless of where you are.</span>
             </div>
             <div class="right">
                 <svg version="1.0"
@@ -1854,24 +1818,24 @@
     <section id="special-offers">
         <h2 class="section__title">Special Offers</h2>
         <ul class="cards">
-            <li>
-                <div class="card">
-                    <img src="{% static 'images/ref.svg' %}" class="card__image" alt=""/>
-                    <div class="card__overlay">
-                        <div class="card__header">
-                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                <path/>
-                            </svg>
-                            <i class="fa-solid fa-people-group card__thumb"></i>
-                            <div class="card__header-text">
-                                <h1 class="card__title">Affiliate Programm</h1>
-                                <span class="card__status">5% off</span>
-                            </div>
-                        </div>
-                        <p class="card__description">Tell us who promoted us to you and get 5% discount</p>
-                    </div>
-                </div>
-            </li>
+            {#            <li>#}
+            {#                <div class="card">#}
+            {#                    <img src="{% static 'images/ref.svg' %}" class="card__image" alt=""/>#}
+            {#                    <div class="card__overlay">#}
+            {#                        <div class="card__header">#}
+            {#                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">#}
+            {#                                <path/>#}
+            {#                            </svg>#}
+            {#                            <i class="fa-solid fa-people-group card__thumb"></i>#}
+            {#                            <div class="card__header-text">#}
+            {#                                <h1 class="card__title">Affiliate Programm</h1>#}
+            {#                                <span class="card__status">5% off</span>#}
+            {#                            </div>#}
+            {#                        </div>#}
+            {#                        <p class="card__description">Tell us who promoted us to you and get 5% discount</p>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#            </li>#}
             <li>
                 <div class="card">
                     <img src="{% static 'images/customer.svg' %}" class="card__image" alt=""/>
@@ -1886,7 +1850,9 @@
                                 <span class="card__status">5% off</span>
                             </div>
                         </div>
-                        <p class="card__description">If you have already used our service, you can get 5% discount</p>
+                        <p class="card__description">If you have already used our service, you are eligible for a 5%
+                            discount. Also, your friends and family are eligible for a 5% discount if they mention
+                            you.</p>
                     </div>
                 </div>
             </li>
@@ -1901,97 +1867,110 @@
                             </svg>
                             <i class="fa-solid fa-box-archive card__thumb"></i>
                             <div class="card__header-text">
-                                <h3 class="card__title">If you are 60+</h3>
+                                <h3 class="card__title">If you are 65+</h3>
                                 <span class="card__status">10% off</span>
                             </div>
                         </div>
-                        <p class="card__description">You can qualify for a 10% discount if you are over 60 years old</p>
+                        <p class="card__description">You qualify for a 10% discount.</p>
                     </div>
                 </div>
             </li>
         </ul>
     </section>
-
     <!--=============== MOVING TIPS ===============-->
     <section id="tips">
         <h2 class="section__title">Frequently asked questions</h2>
         <div class="accordion" style="margin: 5% auto;">
             <div class="accordion__item">
                 <button class="accordion__btn">
-                    <span class="accordion__caption"><i class="far fa-lightbulb"></i>Lorem ipsum dolor sit amet, consectetur?</span>
+                    <span class="accordion__caption"><i
+                            class="far fa-lightbulb"></i>How do I save money on your move?</span>
                     <span class="accordion__icon"><i class="fa fa-plus"></i></span>
                 </button>
-
                 <div class="accordion__content">
-                    <p>The most important thing is that you want to learn something that interests you, because once you
-                        start learning, you’ll be with this topic for a while. Choosing something just because it’s
-                        popular or what others are doing isn’t the way to go because if you don’t have a true interest
-                        in it, you’ll lose the motivation to learn! Spend some time seriously looking into the different
-                        tech career paths before choosing one to go down.</p>
+                    <p>Preparing well ahead of your move can help our movers finish the move faster and help you save
+                        money. <br>
+                        • Use medium size boxes rather than small boxes. Label your boxes as kitchen, living room,
+                        bedroom, etc., for our movers to put them in the right place at your destination. Also, label
+                        "fragile" for fragile items for our movers not to stack them with other boxes.<br>
+                        • Reserve the elevator and parking space closest to the entrance to save time for loading and
+                        unloading.<br>
+                        • Hire 3 movers rather than 2 if you live in a two or more bedroom dwelling. The third mover can
+                        pack the truck and secure your items more properly while the other 2 movers are moving the
+                        items. It makes the move more efficient and helps save time.<br>
+                        • Remove all items from the drawers and wardrobes.
+                    </p>
                 </div>
             </div>
-
             <div class="accordion__item">
                 <button class="accordion__btn">
-
-                    <span class="accordion__caption"><i class="far fa-lightbulb"></i>Lorem ipsum dolor sit amet, consectetur?</span>
+                    <span class="accordion__caption"><i class="far fa-lightbulb"></i>How long does the move take?</span>
                     <span class="accordion__icon"><i class="fa fa-plus"></i></span>
                 </button>
-
                 <div class="accordion__content">
-                    <p>I usually tell most people to start by learning HTML and CSS, then move into learning JavaScript.
-                        The reason is that JavaScript is used everywhere: frontend, backend, and even to build mobile
-                        apps. It has many use cases, which is why I think it’s smart to learn.</p>
+                    <p>The process of moving includes packing, preparing, driving time and travel time, loading and
+                        offloading, and finishing. If you do the packing and prepping yourself, you can save time. Also,
+                        if we load from the garage and offload to the garage, you will save time. However, we will be
+                        happy to deliver all boxes and items to their exact spot. <br>
+
+                        • Driving time Travel time: The driving time is the time taken to convey your stuff from the
+                        previous dwelling to the new place. The driving time is affected by traffic congestion, weather
+                        conditions and so on. We charge a 1-hour travel time which covers the travel to your place and
+                        the return to our home terminal after we have completed the move. <br>
+
+                        • Loading and offloading: Based on our experience, loading and offloading can take<br>
+                         3 to 4 hours to load and offload half a truck load with 2 movers<br>
+                         6 to 8 hours to load and offload full truck load with 2 movers<br>
+                         4 to 6 hours to load and offload full truck load with 3 movers<br>
+
+                        • Finishing: After we have delivered all your items to your new place, the move is considered
+                        completed; however, we can help you with unpacking, assembling, and arranging the furniture if
+                        you ask for it.
+                    </p>
                 </div>
             </div>
-
             <div class="accordion__item">
                 <button class="accordion__btn">
-
-                    <span class="accordion__caption"><i class="far fa-lightbulb"></i>Lorem ipsum dolor sit amet, consectetur?</span>
+                    <span class="accordion__caption"><i class="far fa-lightbulb"></i>Does your company provide insurance for the move?</span>
                     <span class="accordion__icon"><i class="fa fa-plus"></i></span>
                 </button>
-
                 <div class="accordion__content">
-                    <p>If you have an interest in coding and graphic design, then there’s nothing to say you shouldn’t
-                        learn skills in both areas. They often work hand-in-hand, so having knowledge and skills in both
-                        areas could be desirable for certain career paths. You could also think about pursuing something
-                        in between like UI design, which is a very in-demand career right now!
-                        <br><br>
-                        In general, having design skills along with coding skills is helpful. But it’s also okay to do
-                        one over the other. My advice would be to just get started! You can always change directions
-                        later… as long as you’re changing directions to the final destination you’re looking for!
+                    <p>Our maximum coverage is $30,000 provided that the value of your items has been disclosed before
+                        the service. Also, the maximum refund for damaged items is as follows:<br>
+                         Tv, stereo, or other electronics: $550<br>
+                         Sofa: $550<br>
+                         Dining table; $350<br>
+                         Drawers, bookshelves, desk: $300<br>
+                         Railing and stairs: $300<br>
+                         Glassware, mirror, and fragile: $150<br>
+                         Drywall or scratches on paint: $150<br>
+                        If you believe our maximum insurance does not cover the value of your items, we recommend that
+                        you take out additional third-party insurance for the move or delivery.
                     </p>
                 </div>
             </div>
 
             <div class="accordion__item">
                 <button class="accordion__btn">
-
-                    <span class="accordion__caption"><i class="far fa-lightbulb"></i>Lorem ipsum dolor sit amet, consectetur?</span>
+                    <span class="accordion__caption"><i class="far fa-lightbulb"></i>What is the minimum charge?</span>
                     <span class="accordion__icon"><i class="fa fa-plus"></i></span>
                 </button>
-
                 <div class="accordion__content">
-                    <p>Now, in 2020, it’s a no-brainer: Python 3 is definitely the way to go. There are still some
-                        situations where picking up Python 2 might be advantageous, or you may just want to learn a
-                        little of the history and the differences between Python 2 and 3 for curiosity’s sake, but
-                        job-wise, Python 3 is the clear winner.</p>
+                    <p>We charge a minimum two-hour fee for moving commitment and a minimum one-hour fee for delivery.
+                        In addition to the travel time and taxes.</p>
                 </div>
             </div>
-
-            <div class="accordion__item">
-                <button class="accordion__btn">
-                    <span class="accordion__caption"><i class="far fa-lightbulb"></i>Lorem ipsum dolor sit amet, consectetur?</span>
-                    <span class="accordion__icon"><i class="fa fa-plus"></i></span>
-                </button>
-
-                <div class="accordion__content">
-                    <p>Personally, I’d say choose a path and stick to it! Learning too many things at once will slow you
-                        down. Here are a few ideas of things you can choose to focus on, and a little bit about each
-                        one.</p>
-                </div>
-            </div>
+            {#            <div class="accordion__item">#}
+            {#                <button class="accordion__btn">#}
+            {#                    <span class="accordion__caption"><i class="far fa-lightbulb"></i>Lorem ipsum dolor sit amet, consectetur?</span>#}
+            {#                    <span class="accordion__icon"><i class="fa fa-plus"></i></span>#}
+            {#                </button>#}
+            {#                <div class="accordion__content">#}
+            {#                    <p>Personally, I’d say choose a path and stick to it! Learning too many things at once will slow you#}
+            {#                        down. Here are a few ideas of things you can choose to focus on, and a little bit about each#}
+            {#                        one.</p>#}
+            {#                </div>#}
+            {#            </div>#}
         </div>
     </section>
 </main>
