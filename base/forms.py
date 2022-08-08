@@ -30,15 +30,31 @@ class ApplicationForm(forms.Form):
 
 
 class MovingForm(ApplicationForm):
-    APARTMENT_TYPES = [
+    TYPE_AND_SIZE_OF_DWELLING = [
         ('Studio', 'Studio'),
         ('1 Bedroom', '1 Bedroom'),
         ('2 Bedroom', '2 Bedroom'),
         ('3 Bedroom', '3 Bedroom'),
-        ('House', 'House'),
+        ('4 Bedroom', '4 Bedroom'),
+        ('Multilevel Condo - Up to 750 sqft', 'Multilevel Condo - Up to 750 sqft'),
+        ('Multilevel Condo - Up to 1000 sqft', 'Multilevel Condo - Up to 1000 sqft'),
+        ('Multilevel Condo - Up to 1250 sqft', 'Multilevel Condo - Up to 1250 sqft'),
+        ('Multilevel Condo - Up to 1500 sqft', 'Multilevel Condo - Up to 1500 sqft'),
+        ('Multilevel Condo - Up to 2000 sqft', 'Multilevel Condo - Up to 2000 sqft'),
+        ('House - Up to 1000 sqft', 'House - Up to 1000 sqft'),
+        ('House - Up to 1500 sqft', 'House - Up to 1500 sqft'),
+        ('House - Up to 2000 sqft', 'House - Up to 2000 sqft'),
+        ('House - Up to 2500 sqft', 'House - Up to 2500 sqft'),
+        ('House - Up to 3000 sqft', 'House - Up to 3000 sqft'),
+        ('Office - Up to 750 sqft', 'Office - Up to 750 sqft'),
+        ('Office - Up to 1000 sqft', 'Office - Up to 1000 sqft'),
+        ('Office - Up to 1500 sqft', 'Office - Up to 1500 sqft'),
+        ('Office - Up to 2000 sqft', 'Office - Up to 2000 sqft'),
+        ('Office - Up to 2500 sqft', 'Office - Up to 2500 sqft'),
+        ('Office - Up to 3000 sqft', 'Office - Up to 3000 sqft')
     ]
 
-    apart_type = forms.ChoiceField(choices=APARTMENT_TYPES, widget=forms.RadioSelect, label='Apartments type')
+    apart_type = forms.ChoiceField(choices=TYPE_AND_SIZE_OF_DWELLING, label='Type&Size of Dwelling')
 
 
 class DeliveryForm(ApplicationForm):

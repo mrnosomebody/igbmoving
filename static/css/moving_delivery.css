@@ -113,7 +113,7 @@ section {
 #checklist {
     --text: #414856;
     --check: #335075;
-    --disabled: #c3c8de;
+    --disabled: #335075;
     --width: 100%;
     --border-radius: 5px;
     width: var(--width);
@@ -206,11 +206,13 @@ section {
 #checklist input[type="radio"]:checked + label {
     color: var(--disabled);
     animation: move 0.3s ease 0.1s forwards;
+    font-weight: bold;
 }
 
 #checklist input[type="radio"]:checked + label::before {
     background: var(--disabled);
     animation: slice 0.4s ease forwards;
+
 }
 
 #checklist input[type="radio"]:checked + label::after {
@@ -233,7 +235,7 @@ section {
         left: 4px;
     }
     100% {
-        width: 100%;
+        width: 0;
         left: -2px;
         padding-left: 0;
     }

@@ -23,17 +23,21 @@
     <div class="flex">
         <div class="left">
             <img src="{% static 'images/k1.svg' %}" alt="">
-            <p class="title" style="margin-top: 5%">Pricing</p>
+            <div style="display: grid; justify-content: center;">
+                <p class="title" style="margin-top: 5%">Our rates</p>
+                <p style="margin-top: -10%; ;display: flex; justify-content: center;">(per hour)</p>
+            </div>
+
             <div class="pricing__card">
                 <div class="pricing__card__left">
                     <i class="fa-solid fa-truck-ramp-box"></i>
                 </div>
                 <div class="pricing__card__center">
-                    <p><b>Small studio</b></p>
-                    <p>2 loaders</p>
+                    <p><b>2 movers</b></p>
+                    <p>20' Box truck</p>
                 </div>
                 <div class="pricing__card__right">
-                    $110
+                    $100
                 </div>
             </div>
             <div class="pricing__card">
@@ -41,35 +45,11 @@
                     <i class="fa-solid fa-boxes-packing"></i>
                 </div>
                 <div class="pricing__card__center">
-                    <p><b>One bedroom</b></p>
-                    <p>2 loaders</p>
-                </div>
-                <div class="pricing__card__right">
-                    $130
-                </div>
-            </div>
-            <div class="pricing__card">
-                <div class="pricing__card__left">
-                    <i class="fa-solid fa-truck-moving"></i>
-                </div>
-                <div class="pricing__card__center">
-                    <p><b>Two bedroom</b></p>
-                    <p>2 loaders</p>
+                    <p><b>3 movers</b></p>
+                    <p>20' Box truck</p>
                 </div>
                 <div class="pricing__card__right">
                     $150
-                </div>
-            </div>
-            <div class="pricing__card">
-                <div class="pricing__card__left">
-                    <i class="fa-solid fa-people-carry-box"></i>
-                </div>
-                <div class="pricing__card__center">
-                    <p><b>House</b></p>
-                    <p>3 loaders</p>
-                </div>
-                <div class="pricing__card__right">
-                    $180
                 </div>
             </div>
         </div>
@@ -79,6 +59,7 @@
                 in BC. Every move is different, but we do our best to make sure that your move is taken care of
                 expeditiously and gently. We always start by listening to understand all the details of your unique
                 move. We render the services with regard to our terms and conditions. Please read our <a
+                    style="color: hsl(var(--hue), 8%, 35%)"
                     href="{% url 'terms_and_conditions' %}"><u>terms and conditions</u></a> carefully.
             </div>
             <!--=============== CONTACT ===============-->
@@ -148,7 +129,7 @@
                                 </div>
 
                                 <div class="input-field">
-                                    <label for="{{ form.date.name }}">Date</label>
+                                    <label for="{{ form.date.name }}">Moving Date</label>
                                     <input id="{{ form.date.name }}" name="{{ form.date.name }}"
                                            type="date"
                                            placeholder="Enter date you want to move" required>
@@ -178,7 +159,7 @@
 
                                 <div class="input-field">
                                     <label for="{{ form.zip_from.name }}">{{ form.zip_from.label }}</label>
-                                    <input id="{{ form.zip_from.name }}" name="{{ form.zip_from.name }}" type="number"
+                                    <input id="{{ form.zip_from.name }}" name="{{ form.zip_from.name }}" type="text"
                                            placeholder="Enter your zip code" required style="height: 52px">
                                 </div>
 
@@ -218,7 +199,7 @@
 
                                 <div class="input-field">
                                     <label for="{{ form.zip_to.name }}">{{ form.zip_to.label }}</label>
-                                    <input id="{{ form.zip_to.name }}" name="{{ form.zip_to.name }}" type="number"
+                                    <input id="{{ form.zip_to.name }}" name="{{ form.zip_to.name }}" type="text"
                                            placeholder="Enter destination zip code" required style="height: 52px">
                                 </div>
 
@@ -236,29 +217,33 @@
                                     </div>
                                 </div>
 
+                                {#                                <div class="input-field">#}
+                                {#                                    <label for="">{{ form.apart_type.label }}</label>#}
+                                {#                                    <div id="checklist" style="font-size: 18px">#}
+                                {#                                        <input id="id_apart_type_0" type="radio" name="apart_type"#}
+                                {#                                               value="{{ form.apart_type.field.choices.0.0 }}" required>#}
+                                {#                                        <label for="id_apart_type_0">{{ form.apart_type.field.choices.0.0 }}</label>#}
+                                {##}
+                                {#                                        <input id="id_apart_type_1" type="radio" name="apart_type"#}
+                                {#                                               value="{{ form.apart_type.field.choices.1.0 }}" required>#}
+                                {#                                        <label for="id_apart_type_1">{{ form.apart_type.field.choices.1.0 }}</label>#}
+                                {##}
+                                {#                                        <input id="id_apart_type_2" type="radio" name="apart_type"#}
+                                {#                                               value="{{ form.apart_type.field.choices.2.0 }}" required>#}
+                                {#                                        <label for="id_apart_type_2">{{ form.apart_type.field.choices.2.0 }}</label>#}
+                                {##}
+                                {#                                        <input id="id_apart_type_3" type="radio" name="apart_type"#}
+                                {#                                               value="{{ form.apart_type.field.choices.3.0 }}" required>#}
+                                {#                                        <label for="id_apart_type_3">{{ form.apart_type.field.choices.3.0 }}</label>#}
+                                {##}
+                                {#                                        <input id="id_apart_type_4" type="radio" name="apart_type"#}
+                                {#                                               value="{{ form.apart_type.field.choices.4.0 }}" required>#}
+                                {#                                        <label for="id_apart_type_4">{{ form.apart_type.field.choices.4.0 }}</label>#}
+                                {#                                    </div>#}
+                                {#                                </div>#}
                                 <div class="input-field">
                                     <label for="">{{ form.apart_type.label }}</label>
-                                    <div id="checklist" style="font-size: 18px">
-                                        <input id="id_apart_type_0" type="radio" name="apart_type"
-                                               value="{{ form.apart_type.field.choices.0.0 }}" required>
-                                        <label for="id_apart_type_0">{{ form.apart_type.field.choices.0.0 }}</label>
-
-                                        <input id="id_apart_type_1" type="radio" name="apart_type"
-                                               value="{{ form.apart_type.field.choices.1.0 }}" required>
-                                        <label for="id_apart_type_1">{{ form.apart_type.field.choices.1.0 }}</label>
-
-                                        <input id="id_apart_type_2" type="radio" name="apart_type"
-                                               value="{{ form.apart_type.field.choices.2.0 }}" required>
-                                        <label for="id_apart_type_2">{{ form.apart_type.field.choices.2.0 }}</label>
-
-                                        <input id="id_apart_type_3" type="radio" name="apart_type"
-                                               value="{{ form.apart_type.field.choices.3.0 }}" required>
-                                        <label for="id_apart_type_3">{{ form.apart_type.field.choices.3.0 }}</label>
-
-                                        <input id="id_apart_type_4" type="radio" name="apart_type"
-                                               value="{{ form.apart_type.field.choices.4.0 }}" required>
-                                        <label for="id_apart_type_4">{{ form.apart_type.field.choices.4.0 }}</label>
-                                    </div>
+                                    {{ form.apart_type }}
                                 </div>
 
                                 <div class="input-field">
@@ -278,6 +263,7 @@
                                     <button id="submitApplication" type="submit" style="margin: 2% auto;">Submit
                                     </button>
                                     <div style="width: 100%; padding: 0 20%;">By submitting this form you accept the <a
+                                            style="color: hsl(var(--hue), 8%, 35%)"
                                             href="{% url 'terms_and_conditions' %}"><u>terms and conditions</u></a>
                                     </div>
                                 </div>

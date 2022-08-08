@@ -155,7 +155,7 @@
                 <div class="feature__text">
                     <span class="centered">Delivery</span>
                     <p>
-                        Get your items delivered
+                        Get your items delivered.
                     </p>
                     <a href="{% url 'delivery' %}" class="learn__more"><u>Learn more</u></a>
                 </div>
@@ -1818,24 +1818,6 @@
     <section id="special-offers">
         <h2 class="section__title">Special Offers</h2>
         <ul class="cards">
-            {#            <li>#}
-            {#                <div class="card">#}
-            {#                    <img src="{% static 'images/ref.svg' %}" class="card__image" alt=""/>#}
-            {#                    <div class="card__overlay">#}
-            {#                        <div class="card__header">#}
-            {#                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">#}
-            {#                                <path/>#}
-            {#                            </svg>#}
-            {#                            <i class="fa-solid fa-people-group card__thumb"></i>#}
-            {#                            <div class="card__header-text">#}
-            {#                                <h1 class="card__title">Affiliate Programm</h1>#}
-            {#                                <span class="card__status">5% off</span>#}
-            {#                            </div>#}
-            {#                        </div>#}
-            {#                        <p class="card__description">Tell us who promoted us to you and get 5% discount</p>#}
-            {#                    </div>#}
-            {#                </div>#}
-            {#            </li>#}
             <li>
                 <div class="card">
                     <img src="{% static 'images/customer.svg' %}" class="card__image" alt=""/>
@@ -1847,7 +1829,7 @@
                             <i class="fa-solid fa-handshake card__thumb"></i>
                             <div class="card__header-text">
                                 <h3 class="card__title">Regular Customer</h3>
-                                <span class="card__status">5% off</span>
+                                <h3 class="card__title">5% off</h3>
                             </div>
                         </div>
                         <p class="card__description">If you have already used our service, you are eligible for a 5%
@@ -1868,7 +1850,7 @@
                             <i class="fa-solid fa-box-archive card__thumb"></i>
                             <div class="card__header-text">
                                 <h3 class="card__title">If you are 65+</h3>
-                                <span class="card__status">10% off</span>
+                                <h3 class="card__title">10% off</h3>
                             </div>
                         </div>
                         <p class="card__description">You qualify for a 10% discount.</p>
@@ -1960,18 +1942,29 @@
                         In addition to the travel time and taxes.</p>
                 </div>
             </div>
-            {#            <div class="accordion__item">#}
-            {#                <button class="accordion__btn">#}
-            {#                    <span class="accordion__caption"><i class="far fa-lightbulb"></i>Lorem ipsum dolor sit amet, consectetur?</span>#}
-            {#                    <span class="accordion__icon"><i class="fa fa-plus"></i></span>#}
-            {#                </button>#}
-            {#                <div class="accordion__content">#}
-            {#                    <p>Personally, I’d say choose a path and stick to it! Learning too many things at once will slow you#}
-            {#                        down. Here are a few ideas of things you can choose to focus on, and a little bit about each#}
-            {#                        one.</p>#}
-            {#                </div>#}
-            {#            </div>#}
         </div>
+    </section>
+    <section id="footer">
+        <div class="flex__box" id="footer_flex">
+            <div class="footer__text">
+                <p>E-mail: igb.moving.delivery@gmail.com</p>
+                <p style="margin-top: 10px;">Phone: +1(604)600-7536</p>
+            </div>
+            <img src="{% static 'images/igb.svg' %}" alt="" class="footer_img">
+            <div class="footer__text" style="justify-items: center;">
+                <div class="icons">
+                    <a href="" class="icon"><i class="fa-brands fa-yelp"></i></a>
+                    <a href="" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=16046007536&text=Hello" target="_blank"
+                       class="icon"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <a href="{% url 'terms_and_conditions' %}" style="color: #f9f9f9; text-decoration: none;">Terms and Conditions</a>
+            </div>
+
+        </div>
+
+
     </section>
 </main>
 <!--=============== MAIN JS ===============-->
