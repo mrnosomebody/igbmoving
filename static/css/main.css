@@ -122,6 +122,15 @@
     .cards {
         gap: 2rem;
     }
+
+    .flex__box {
+        display: grid;
+        padding: 0;
+    }
+
+    .left {
+        width: 80%;
+    }
 }
 
 @media screen and (min-width: 767px) {
@@ -171,6 +180,15 @@
 
     .cards {
         gap: 2rem;
+    }
+
+    .flex__box {
+        display: grid;
+        padding: 0;
+    }
+
+    .left {
+        width: 80%;
     }
 
 }
@@ -276,7 +294,7 @@ button {
 }
 
 .accordion {
-    width: 35%;
+    width: 45%;
     padding: 1.2rem 0;
     border-radius: 1rem;
     background: white;
@@ -330,12 +348,13 @@ button {
 }
 
 .accordion__content {
-    font-weight: 300;
+    font-weight: 600;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transform: translateX(16px);
     transition: max-height 0.5s ease, opacity 0.5s, transform 0.5s;
+    font-size: 20px;
 }
 
 .accordion__content p {
@@ -398,15 +417,6 @@ button {
     }
 }
 
-@media screen and (max-width: 1279px) {
-    .badge {
-        font-size: 11px;
-    }
-
-    .accordion {
-        width: 80%;
-    }
-}
 
 @media screen and (min-width: 1280px) {
     .badge {
@@ -594,6 +604,10 @@ button {
     margin-top: 10%;
 }
 
+.faq__ul {
+    padding: 0 6%;
+}
+
 #footer {
     min-height: 30vh;
     background-color: #335075;
@@ -626,6 +640,10 @@ button {
 .footer_img {
     width: 10%;
     height: 10%;
+}
+
+#services {
+    padding-top: 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -726,6 +744,75 @@ button {
     .footer__text {
         padding-top: 5%;
     }
+
+    section {
+        min-height: fit-content;
+    }
+
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .accordion__content {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .badge {
+        font-size: 11px;
+    }
+
+    .accordion {
+        width: 80%;
+    }
+
+    section {
+        min-height: fit-content;
+        margin: 10% 0;
+    }
+
+    .flex__box {
+        display: grid;
+        padding: 0;
+    }
+
+    .footer_img {
+        display: none;
+    }
+
+    .left {
+        width: 100%;
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 5%;
+        padding: 0 2%;
+    }
+
+    .right {
+        width: 100%;
+        height: 100%;
+    }
+
+    .right svg {
+        width: 100vw;
+        height: 100%;
+    }
+
+    #tips {
+        padding: 0;
+    }
+
+    .accordion {
+        width: 100%;
+        padding: 0 1%;
+    }
+
+    .faq__ul {
+        padding: 0 10%;
+    }
+
 }
 
 @media screen and (max-width: 376px) {

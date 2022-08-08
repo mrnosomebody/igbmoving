@@ -92,3 +92,9 @@ section {
     position: relative;
     overflow-x: hidden;
 }
+
+@media (max-width: 767px) {
+    img {
+        margin-left: 10%;
+    }
+}

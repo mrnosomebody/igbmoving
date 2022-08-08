@@ -24,6 +24,11 @@ section {
     padding: 0 5%;
 }
 
+.terms_under {
+    width: 100%;
+    padding: 0 20%;
+}
+
 .title {
     font-size: 26px;
     display: flex;
@@ -222,7 +227,7 @@ section {
 @keyframes move {
     50% {
         padding-left: 8px;
-        padding-right:0;
+        padding-right: 0;
     }
     100% {
         padding-right: 4px;
@@ -248,12 +253,12 @@ section {
         transform: rotate(0);
     }
     50% {
-        width:0;
+        width: 0;
         top: auto;
         transform: rotate(0);
     }
     51% {
-        width:0;
+        width: 0;
         top: 8px;
         transform: rotate(45deg);
     }
@@ -271,12 +276,12 @@ section {
         transform: rotate(0);
     }
     50% {
-        width:0;
+        width: 0;
         top: auto;
         transform: rotate(0);
     }
     51% {
-        width:0;
+        width: 0;
         top: 8px;
         transform: rotate(-45deg);
     }
@@ -319,12 +324,35 @@ section {
 
 }
 
-@media (max-width: 750px) {
+@media (max-width: 821px) {
 
     section {
         height: fit-content;
         margin-bottom: 10%;
     }
 
+    .flex {
+        display: grid;
+        margin-top: 10%;
+    }
+
+    .left {
+        width: 100%;
+    }
+
+    .right {
+        margin-top: 8%;
+        width: 100%;
+    }
+
+    .description__area {
+        font-size: 24px;
+        padding: 0 4%;
+    }
+
+    .terms_under {
+        width: 100%;
+        padding: 0 5%;
+    }
 
 }
