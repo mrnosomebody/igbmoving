@@ -96,6 +96,13 @@ form .fields .input-field {
     color: #333;
 }
 
+.form_p {
+    width: 100%;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
 .g-recaptcha {
     width: 100%;
     display: flex;

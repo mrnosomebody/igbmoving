@@ -133,7 +133,7 @@
     }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 767px) and (max-width: 2000px) {
 
     .container {
         margin-left: auto;
@@ -194,16 +194,7 @@
 }
 
 /* For large devices */
-@media screen and (min-width: 1024px) {
-    .container {
-        margin-left: auto;
-        margin-right: auto;
-    }
 
-    .cards {
-        gap: 2rem;
-    }
-}
 
 .image__blob {
     display: flex;
@@ -272,7 +263,7 @@ button {
 }
 
 .feature__text {
-    padding: 20px 0px;
+    padding: 20px 0;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -322,6 +313,7 @@ button {
     text-align: left;
     cursor: pointer;
     transition: 0.1s;
+    color: var(--text-color);
 }
 
 .accordion__btn:hover {
@@ -358,7 +350,7 @@ button {
 }
 
 .accordion__content p {
-    padding: 1rem 1.8rem;
+    padding: 1rem 1.3rem;
 }
 
 .accordion__item--active .accordion__content {
@@ -455,6 +447,10 @@ button {
     border-radius: 0.4em;
     z-index: 1;
     text-transform: uppercase;
+}
+
+.price {
+    font-size: 20px;
 }
 
 .flex__box {
@@ -757,6 +753,11 @@ button {
     .accordion__content {
         font-size: 18px;
     }
+
+    .accordion__content p {
+        font-size: 18px;
+        padding: 1rem 0.5rem;
+    }
 }
 
 @media screen and (max-width: 1279px) {
@@ -811,6 +812,103 @@ button {
 
     .faq__ul {
         padding: 0 10%;
+    }
+
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2561px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .nav__name {
+        font-size: calc(var(--tiny-font-size) + 0.8rem);
+    }
+
+    .logo {
+        width: calc(var(--header-height) + 2.5rem);
+        height: calc(var(--header-height) + 2.5rem);
+    }
+
+    .title__text {
+        font-size: 52px;
+    }
+
+    .smaller {
+        font-size: 34px;
+    }
+
+    .to__form__link {
+        font-size: 34px;
+    }
+
+    .section__title {
+        font-size: calc(var(--h1-font-size) + 1rem);
+    }
+
+    .feature {
+        width: 400px;
+        height: 600px;
+    }
+
+    .badge {
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 26px;
+    }
+
+    .feature__text {
+        font-size: 30px;
+    }
+
+    .feature__text p {
+        font-size: 28px;
+    }
+
+    .learn__more {
+        font-size: 30px;
+    }
+
+    .cards {
+        gap: 10rem;
+        margin: 4rem 20vw;
+    }
+
+    .card__description {
+        font-size: 1.8em;
+    }
+
+    .accordion__btn {
+        font-size: 2.1rem;
+
+    }
+
+    .accordion__content {
+        font-size: 28px;
+    }
+
+    .left {
+        font-size: 38px;
+    }
+
+    .footer__text {
+        font-size: 30px;
+    }
+
+    .icon {
+        font-size: 60px;
+    }
+
+    .footer_img {
+        width: 8%;
+        height: 8%;
+    }
+    .nav {
+        height: calc(var(--header-height) + 2.5rem); /* 4.5rem */
     }
 
 }

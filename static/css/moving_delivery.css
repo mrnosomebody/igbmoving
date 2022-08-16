@@ -115,13 +115,20 @@ section {
     margin: 30px 70px;
 }
 
+#zip_from {
+    height: 52px;
+}
+
+#zip_to {
+    height: 52px;
+}
+
 #checklist {
     --text: #414856;
     --check: #335075;
     --disabled: #335075;
     --width: 100%;
     --border-radius: 5px;
-    width: var(--width);
     border-radius: var(--border-radius);
     position: relative;
     padding: 0 20px;
@@ -130,6 +137,8 @@ section {
     grid-template-columns: 30px auto;
     align-items: center;
     margin: 12px 0;
+    height: 52px;
+    width: 100%;
 }
 
 #checklist label {
@@ -315,13 +324,6 @@ section {
     .section {
         padding: 7rem 0 2rem;
     }
-
-
-}
-
-/* For large devices */
-@media screen and (min-width: 1024px) {
-
 }
 
 @media (max-width: 821px) {
@@ -354,5 +356,82 @@ section {
         width: 100%;
         padding: 0 5%;
     }
+}
 
+@media screen and (min-width: 1921px) and (max-width: 2561px) {
+    .back__btn {
+        font-size: 36px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .per_hour {
+        font-size: 24px;
+    }
+
+    .pricing__card {
+        font-size: 30px;
+    }
+
+    .pricing__card__left {
+        font-size: 40px;
+    }
+
+    .pricing__card__right {
+        font-size: 30px;
+    }
+
+    .description__area {
+        font-size: 37px;
+    }
+
+    .form__container {
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 34px;
+    }
+
+    .input-field label {
+        font-size: 26px;
+    }
+
+    .input-field input, select {
+        font-size: 24px;
+        height: 72px;
+    }
+
+    .input-field option {
+        font-size: 12px;
+    }
+
+    .form_p {
+        font-size: 28px;
+    }
+
+    #checklist {
+        height: 72px;
+    }
+
+    #checklist label {
+        font-size: 24px;
+    }
+
+    #zip_from {
+        height: 72px;
+    }
+
+    #zip_to {
+        height: 72px;
+    }
+
+    #submitApplication {
+    font-size: 34px;
+}
+    .terms_under {
+    font-size: 30px;
+}
 }

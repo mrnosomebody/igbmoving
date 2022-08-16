@@ -121,7 +121,7 @@
                                            placeholder="Enter date you want to move" required>
                                 </div>
 
-                                <p style="width: 100%; font-weight: bold;margin-top: 20px;margin-bottom: 5px;">From</p>
+                                <p class="form_p">From</p>
 
                                 <div class="input-field" id="adr_from" style="width: 100%;">
                                     <label for="{{ form.address_from.name }}">{{ form.address_from.label }}</label>
@@ -147,12 +147,12 @@
                                 <div class="input-field">
                                     <label for="{{ form.zip_from.name }}">{{ form.zip_from.label }}</label>
                                     <input id="{{ form.zip_from.name }}" name="{{ form.zip_from.name }}" type="text"
-                                           placeholder="Enter your zip code" required style="height: 52px;">
+                                           placeholder="Enter your zip code" required>
                                 </div>
 
                                 <div class="input-field">
                                     <label for="">{{ form.elevator_pickup.label }}</label>
-                                    <div id="checklist" style="height: 52px;width: 100%;">
+                                    <div id="checklist">
                                         <input id="id_elevator_pickup_0" type="radio" name="elevator_pickup"
                                                value="{{ form.elevator_pickup.field.choices.0.0 }}" required>
                                         <label for="id_elevator_pickup_0">{{ form.elevator_pickup.field.choices.0.0 }}</label>
@@ -163,7 +163,7 @@
                                     </div>
                                 </div>
 
-                                <p style="width: 100%; font-weight: bold; margin-top: 20px;margin-bottom: 5px;">To</p>
+                                <p class="form_p">To</p>
 
                                 <div class="input-field" id="adr_to" style="width: 100%;">
                                     <label for="{{ form.address_to.name }}">{{ form.address_to.label }}</label>
@@ -186,13 +186,13 @@
                                 <div class="input-field">
                                     <label for="{{ form.zip_to.name }}">{{ form.zip_to.label }}</label>
                                     <input id="{{ form.zip_to.name }}" name="{{ form.zip_to.name }}" type="text"
-                                           placeholder="Enter destination zip code" required style="height: 52px">
+                                           placeholder="Enter destination zip code" required>
                                 </div>
 
 
                                 <div class="input-field">
                                     <label for="">{{ form.elevator_dropoff.label }}</label>
-                                    <div id="checklist" style="height: 52px;width: 100%;">
+                                    <div id="checklist">
                                         <input id="id_elevator_dropoff_0" type="radio" name="elevator_dropoff"
                                                value="{{ form.elevator_dropoff.field.choices.0.0 }}" required>
                                         <label for="id_elevator_dropoff_0">{{ form.elevator_dropoff.field.choices.0.0 }}</label>
