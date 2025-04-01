@@ -9,14 +9,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }

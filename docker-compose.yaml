@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: .
+    command: ${DJANGO_RUN_COMMAND}
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    restart: always
+    env_file:
+      - .env.local # Load environment variables from .env in prod
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

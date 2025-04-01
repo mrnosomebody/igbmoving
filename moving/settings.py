@@ -1,8 +1,13 @@
 import os
 from pathlib import Path
 import email_config
+from dotenv import load_dotenv
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -69,8 +74,31 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.0/topics/i18n/
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST', 'postgres'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
+    }
+}
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
+
+
 
 LANGUAGE_CODE = 'en-us'
 

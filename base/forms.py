@@ -1,6 +1,8 @@
 from django import forms
 from phonenumber_field.formfields import PhoneNumberField
 
+from base.enums import ApartmentType
+
 
 class ApplicationForm(forms.Form):
     YES_NO = [
@@ -30,31 +32,7 @@ class ApplicationForm(forms.Form):
 
 
 class MovingForm(ApplicationForm):
-    TYPE_AND_SIZE_OF_DWELLING = [
-        ('Studio', 'Studio'),
-        ('1 Bedroom', '1 Bedroom'),
-        ('2 Bedroom', '2 Bedroom'),
-        ('3 Bedroom', '3 Bedroom'),
-        ('4 Bedroom', '4 Bedroom'),
-        ('Multilevel Condo - Up to 750 sqft', 'Multilevel Condo - Up to 750 sqft'),
-        ('Multilevel Condo - Up to 1000 sqft', 'Multilevel Condo - Up to 1000 sqft'),
-        ('Multilevel Condo - Up to 1250 sqft', 'Multilevel Condo - Up to 1250 sqft'),
-        ('Multilevel Condo - Up to 1500 sqft', 'Multilevel Condo - Up to 1500 sqft'),
-        ('Multilevel Condo - Up to 2000 sqft', 'Multilevel Condo - Up to 2000 sqft'),
-        ('House - Up to 1000 sqft', 'House - Up to 1000 sqft'),
-        ('House - Up to 1500 sqft', 'House - Up to 1500 sqft'),
-        ('House - Up to 2000 sqft', 'House - Up to 2000 sqft'),
-        ('House - Up to 2500 sqft', 'House - Up to 2500 sqft'),
-        ('House - Up to 3000 sqft', 'House - Up to 3000 sqft'),
-        ('Office - Up to 750 sqft', 'Office - Up to 750 sqft'),
-        ('Office - Up to 1000 sqft', 'Office - Up to 1000 sqft'),
-        ('Office - Up to 1500 sqft', 'Office - Up to 1500 sqft'),
-        ('Office - Up to 2000 sqft', 'Office - Up to 2000 sqft'),
-        ('Office - Up to 2500 sqft', 'Office - Up to 2500 sqft'),
-        ('Office - Up to 3000 sqft', 'Office - Up to 3000 sqft')
-    ]
-
-    apart_type = forms.ChoiceField(choices=TYPE_AND_SIZE_OF_DWELLING, label='Type&Size of Dwelling')
+    apart_type = forms.ChoiceField(choices=ApartmentType.choices, label='Apartment Type')
 
 
 class DeliveryForm(ApplicationForm):
