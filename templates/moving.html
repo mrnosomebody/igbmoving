@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'css/form.css' %}">
     <link rel="stylesheet" href="{% static 'css/notification.css' %}">
     <link rel="stylesheet" href="{% static 'css/moving_delivery.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
 <section>
@@ -86,15 +87,15 @@
                 </symbol>
             </svg>
             {% if messages %}
-                <div class="messages">
-                    {% for message in messages %}
-                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
-                            <div id="errorTrigger"></div>
-                        {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-                            <div id="successTrigger"></div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
+            <div class="messages">
+                {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div id="errorTrigger"></div>
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div id="successTrigger"></div>
+                {% endif %}
+                {% endfor %}
+            </div>
             {% endif %}
             <form action="" method="post" style="margin-top: 5%;" id="contactForm">
                 {% csrf_token %}
@@ -122,18 +123,18 @@
                                     <input id="{{ form.phone.name }}" name="{{ form.phone.name }}" type="tel"
                                            placeholder="(999) 999-9999" required>
                                     {% if form.phone.errors %}
-                                        <div style="color: red">
-                                            Enter a valid phone number (e.g. (999)-999-9999)
-                                        </div>
+                                    <div style="color: red">
+                                        Enter a valid phone number (e.g. (999)-999-9999)
+                                    </div>
                                     {% endif %}
                                 </div>
 
                                 <div class="input-field">
-                                    <label for="{{ form.date.name }}">Moving Date</label>
-                                    <input id="{{ form.date.name }}" name="{{ form.date.name }}"
-                                           type="date"
-                                           placeholder="Enter date you want to move" required>
+                                    <label for="id_date">Moving Date and Time</label>
+                                    <input id="id_date" name="date" type="text" placeholder="Select date and time"
+                                           required>
                                 </div>
+
 
                                 <p class="form_p">From</p>
 
@@ -254,5 +255,16 @@
 
 <script src="{% static 'js/moving_delivery.js' %}"></script>
 <script src="{% static 'js/notifications.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  flatpickr("#id_date", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    time_24hr: true,
+    minuteIncrement: 10  // шаг минут 10
+  });
+</script>
+
 </body>
 </html>

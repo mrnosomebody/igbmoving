@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'css/form.css' %}">
     <link rel="stylesheet" href="{% static 'css/notification.css' %}">
     <link rel="stylesheet" href="{% static 'css/moving_delivery.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
 <section>
@@ -115,10 +116,9 @@
                                 </div>
 
                                 <div class="input-field">
-                                    <label for="{{ form.date.name }}">Delivery Date</label>
-                                    <input id="{{ form.date.name }}" name="{{ form.date.name }}"
-                                           type="date"
-                                           placeholder="Enter date you want to move" required>
+                                    <label for="id_date">Delivery Date and Time</label>
+                                    <input id="id_date" name="date" type="text" placeholder="Enter date you want to move"
+                                           required>
                                 </div>
 
                                 <p class="form_p">From</p>
@@ -243,5 +243,15 @@
 
 <script src="{% static 'js/moving_delivery.js' %}"></script>
 <script src="{% static 'js/notifications.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  flatpickr("#id_date", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    time_24hr: true,
+    minuteIncrement: 10  // шаг минут 10
+  });
+</script>
 </body>
 </html>

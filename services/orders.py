@@ -7,7 +7,7 @@ from base.models import Order, Address
 
 
 @transaction.atomic
-def save_new_order(order_dto: OrderDTO) -> Order:
+def create_new_order(order_dto: OrderDTO) -> Order:
     address_from = Address.objects.create(
         address=order_dto.address_from,
         city=order_dto.city_from,
@@ -32,6 +32,9 @@ def save_new_order(order_dto: OrderDTO) -> Order:
         end_address=address_to,
         apartment_type=order_dto.apartment_type,
         promocode=order_dto.promocode,
+        order_type=order_dto.order_type,
+        large_items=order_dto.large_items,
+        medium_items=order_dto.medium_items,
     )
 
     return order

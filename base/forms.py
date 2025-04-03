@@ -13,7 +13,9 @@ class ApplicationForm(forms.Form):
     name = forms.CharField(max_length=85, label='Full Name')
     email = forms.EmailField(max_length=255, label='Email')
     phone = PhoneNumberField(region='CA', label='Mobile Number')  # Get the phone as a string: client.phone.as_e164
-    date = forms.DateField(label='Date')
+    date = forms.DateTimeField(
+        label='Moving DateTime',
+    )
 
     address_from = forms.CharField(max_length=255, label='Start address')
     city_from = forms.CharField(label='City')

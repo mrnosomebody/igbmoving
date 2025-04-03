@@ -3,11 +3,14 @@ import datetime
 from pydantic import BaseModel
 from phonenumber_field.formfields import PhoneNumber
 
+from base.enums import OrderType, OrderStatus
+
+
 class OrderDTO(BaseModel):
     name: str
     email: str
     phone: PhoneNumber
-    date: datetime.date
+    date: datetime.datetime
     address_from: str
     city_from: str
     zip_from: str
@@ -19,7 +22,12 @@ class OrderDTO(BaseModel):
     elevator_pickup: str
     elevator_dropoff: str
     promocode: str = None
-    apartment_type: str
+    apartment_type: str | None = None
+    large_items: int | None = None
+    medium_items: int | None = None
+    order_type: OrderType
+    status: OrderStatus | None = None
+
 
     class Config:
         arbitrary_types_allowed = True

@@ -22,3 +22,14 @@ class ApartmentType(models.TextChoices):
     OFFICE_UP_TO_2000 = 'Office - Up to 2000 sqft', 'Office - Up to 2000 sqft'
     OFFICE_UP_TO_2500 = 'Office - Up to 2500 sqft', 'Office - Up to 2500 sqft'
     OFFICE_UP_TO_3000 = 'Office - Up to 3000 sqft', 'Office - Up to 3000 sqft'
+
+
+class OrderStatus(models.TextChoices):
+    NEW = 'New', 'New'
+    IN_PROGRESS = 'In Progress', 'In Progress'
+    COMPLETED = 'Completed', 'Completed'
+    CANCELED = 'Canceled', 'Canceled'
+
+class OrderType(models.TextChoices):
+    MOVING = 'Moving', 'Moving'
+    DELIVERY = 'Delivery', 'Delivery'

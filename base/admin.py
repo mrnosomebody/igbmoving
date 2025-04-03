@@ -12,7 +12,7 @@ class AddressAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'email', 'phone', 'moving_date', 'submission_date', 'apartment_type')
+    list_display = ('full_name', 'email', 'phone', 'moving_date', 'submission_date', 'order_type', 'status')
     readonly_fields = ('submission_date', 'start_address_info', 'end_address_info',)
 
     def start_address_info(self, obj):

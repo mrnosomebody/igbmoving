@@ -3,8 +3,9 @@ import logging
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
-from services.orders import save_new_order
+from services.orders import create_new_order
 from .dto import OrderDTO
+from .enums import OrderType
 from .forms import MovingForm, DeliveryForm
 from services.send_application_by_email import send_email
 from captcha_config import SITE_KEY
@@ -46,9 +47,10 @@ def moving(request):
                         elevator_pickup=data['elevator_pickup'],
                         elevator_dropoff=data['elevator_dropoff'],
                         promocode=data.get('promocode'),
-                        apartment_type=data.get('apart_type')
+                        apartment_type=data.get('apart_type'),
+                        order_type=OrderType.MOVING
                     )
-                    order = save_new_order(order_dto)
+                    order = create_new_order(order_dto)
                     logger.info("Order saved successfully", str(order))
                     messages.success(request, "Success")
                     try:
@@ -89,13 +91,42 @@ def delivery(request):
             captcha_is_valid = check_captcha(request)
             if captcha_is_valid:
                 try:
-                    send_email(data, 'Delivery')
-                    logger.info("Email sent successfully for Delivery")
+                    order_dto = OrderDTO(
+                        name=data['name'],
+                        email=data['email'],
+                        phone=data['phone'],
+                        date=data['date'],
+                        address_from=data['address_from'],
+                        city_from=data['city_from'],
+                        zip_from=data['zip_from'],
+                        address_to=data['address_to'],
+                        city_to=data['city_to'],
+                        zip_to=data['zip_to'],
+                        floor_from=data['floor_from'],
+                        floor_to=data['floor_to'],
+                        elevator_pickup=data['elevator_pickup'],
+                        elevator_dropoff=data['elevator_dropoff'],
+                        promocode=data.get('promocode'),
+                        large_items=data.get('large_items'),
+                        medium_items=data.get('medium_items'),
+                        order_type=OrderType.DELIVERY
+                    )
+                    order = create_new_order(order_dto)
+                    logger.info("Order saved successfully", str(order))
                     messages.success(request, "Success")
+                    try:
+                        send_email(data, 'Delivery')
+                    except Exception as e:
+                        logger.error("Error while sending email: %s", e, exc_info=True)
+                        messages.error(request, "Server error occurred, we didn't get your application")
+                        return redirect('delivery')
+
                     return redirect('delivery')
+
                 except smtplib.SMTPException as e:
                     logger.error("SMTP error while sending email for Delivery: %s", e, exc_info=True)
                     messages.error(request, f"{e} (Server error occurred, we didn't get your application)")
+
                 except Exception as e:
                     logger.error("Unexpected error in Delivery view: %s", e, exc_info=True)
                     messages.error(request, f"{e} Unexpected error occurred. Please try again later.")
