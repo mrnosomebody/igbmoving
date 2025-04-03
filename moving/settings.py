@@ -121,7 +121,7 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 RECIPIENTS = email_config.RECIPIENTS
 
-# try:
-#     from .prod_settings import *
-# except ImportError:
-from .local_settings import *
+try:
+    from .prod_settings import *
+except ImportError:
+    from .local_settings import *
