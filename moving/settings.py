@@ -19,6 +19,7 @@ INSTALLED_APPS = [
 
     'base',
     "phonenumber_field",
+    "django_celery_results",
 ]
 
 MIDDLEWARE = [
@@ -51,13 +52,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'moving.wsgi.application'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -120,6 +114,14 @@ EMAIL_HOST_PASSWORD = email_config.EMAIL_HOST_PASSWORD
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 RECIPIENTS = email_config.RECIPIENTS
+
+CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND = os.environ.get('CELERY_RESULT_BACKEND')
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC'
+
 
 try:
     from .prod_settings import *

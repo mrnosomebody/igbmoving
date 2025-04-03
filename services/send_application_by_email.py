@@ -2,14 +2,19 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
 from email_config import EMAIL_HOST_USER, RECIPIENTS
+from celery import shared_task
+import logging
 
+logger = logging.getLogger(__name__)
 
-def send_email(data, service):
+@shared_task
+def send_email_task(data, service):
+    logger.info("Sending email task")
     subject = 'New Application'
     data['service'] = service
     message = f"name: {data['name']}\n" \
               f"email: {data['email']}\n" \
-              f"phone: {data['phone'].as_e164}\n" \
+              f"phone: {data['phone']}\n" \
               f"date: {data['date']}\n" \
               f"address_from: {data['address_from']}\n" \
               f"city_from: {data['city_from']}\n" \

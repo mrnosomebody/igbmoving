@@ -7,7 +7,7 @@ from services.orders import create_new_order
 from .dto import OrderDTO
 from .enums import OrderType
 from .forms import MovingForm, DeliveryForm
-from services.send_application_by_email import send_email
+from services.send_application_by_email import send_email_task
 from captcha_config import SITE_KEY
 from services.captcha_is_valid import check_captcha
 
@@ -51,14 +51,12 @@ def moving(request):
                         order_type=OrderType.MOVING
                     )
                     order = create_new_order(order_dto)
-                    logger.info("Order saved successfully", str(order))
+                    logger.info(f"Order saved successfully: {order}")
                     messages.success(request, "Success")
-                    try:
-                        send_email(data, 'Moving')
-                    except Exception as e:
-                        logger.error("Error while sending email: %s", e, exc_info=True)
-                        messages.error(request, "Server error occurred, we didn't get your application")
-                        return redirect('moving')
+
+                    data['phone'] = str(data['phone'])
+                    send_email_task.delay(data, 'Moving')
+
                     return redirect('moving')
 
                 except smtplib.SMTPException as e:
@@ -112,14 +110,11 @@ def delivery(request):
                         order_type=OrderType.DELIVERY
                     )
                     order = create_new_order(order_dto)
-                    logger.info("Order saved successfully", str(order))
+                    logger.info(f"Order saved successfully: {order}")
                     messages.success(request, "Success")
-                    try:
-                        send_email(data, 'Delivery')
-                    except Exception as e:
-                        logger.error("Error while sending email: %s", e, exc_info=True)
-                        messages.error(request, "Server error occurred, we didn't get your application")
-                        return redirect('delivery')
+
+                    data['phone'] = str(data['phone'])
+                    send_email_task.delay(data, 'Delivery')
 
                     return redirect('delivery')
 
